@@ -10,7 +10,7 @@ public class CustomerService {
 
     private final CustomerDAO customerDAO;
 
-    public CustomerService(@Qualifier("real") CustomerDAO customerDAO) {
+    public CustomerService(@Qualifier("fake") CustomerDAO customerDAO) {
         this.customerDAO = customerDAO;
     }
 
