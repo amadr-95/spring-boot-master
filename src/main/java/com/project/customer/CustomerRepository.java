@@ -13,7 +13,7 @@ public class CustomerRepository implements CustomerDAO {
     public List<Customer> getCustomers() {
         //TODO connect to real db
         return Collections.singletonList(
-                new Customer(0L, "TODO. Implement real db", "todo")
+                new Customer(0L, "TODO. Implement real db", "todo", "email@gmail.com")
         );
     }
 }
