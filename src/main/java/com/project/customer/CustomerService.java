@@ -1,5 +1,6 @@
 package com.project.customer;
 
+import com.project.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +23,6 @@ public class CustomerService {
         return getCustomers().stream()
                 .filter(customer -> customer.getId().equals(customerId))
                 .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException("customer with id " + customerId + " not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("customer with id " + customerId + " not found"));
     }
 }
