@@ -17,4 +17,11 @@ public class CustomerService {
     public List<Customer> getCustomers() {
         return customerDAO.getCustomers();
     }
+
+    public Customer getCustomer(Long customerId) {
+        return getCustomers().stream()
+                .filter(customer -> customer.getId().equals(customerId))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("customer not found"));
+    }
 }
