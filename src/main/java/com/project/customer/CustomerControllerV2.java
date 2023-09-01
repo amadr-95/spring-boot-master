@@ -1,5 +1,6 @@
 package com.project.customer;
 
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,7 +33,7 @@ public class CustomerControllerV2 {
     }
 
     @PostMapping
-    public void createCustomer(@RequestBody Customer customer) {
+    public void createCustomer(@Valid @RequestBody Customer customer) {
         System.out.println("POST REQUEST...");
         System.out.println(customer);
     }
