@@ -1,45 +1,13 @@
 package com.project.exception;
 
-import org.springframework.http.HttpStatus;
+import java.util.Date;
 
-import java.time.ZonedDateTime;
+public interface ErrorMessage {
 
-public class ErrorMessage {
-    private final String message;
-    private final Throwable throwable;
-    private final HttpStatus httpStatus;
-    private final ZonedDateTime zonedDateTime;
+    String getMessage();
 
-    public ErrorMessage(String message, Throwable throwable, HttpStatus httpStatus, ZonedDateTime zonedDateTime) {
-        this.message = message;
-        this.throwable = throwable;
-        this.httpStatus = httpStatus;
-        this.zonedDateTime = zonedDateTime;
-    }
+    int getStatusCode();
 
-    public String getMessage() {
-        return message;
-    }
+    Date getTimestamp();
 
-    public Throwable getThrowable() {
-        return throwable;
-    }
-
-    public HttpStatus getHttpStatus() {
-        return httpStatus;
-    }
-
-    public ZonedDateTime getZonedDateTime() {
-        return zonedDateTime;
-    }
-
-    @Override
-    public String toString() {
-        return "ApiException{" +
-                "message='" + message + '\'' +
-                ", throwable=" + throwable +
-                ", httpStatus=" + httpStatus +
-                ", zonedDateTime=" + zonedDateTime +
-                '}';
-    }
 }
