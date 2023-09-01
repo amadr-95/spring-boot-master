@@ -11,16 +11,16 @@ public class Customer {
 
     private final Long id;
 
-    @NotBlank
+    @NotBlank(message = "name cannot be empty")
     private final String name;
 
-    @NotBlank
+    @NotBlank(message = "password cannot be empty")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private final String password;
 
     //custom regex expression can be used instead of the default one
     @Email(regexp = EMAIL_PATTERN)
-    @NotBlank
+    @NotBlank(message = "email cannot be empty")
     private final String email;
 
     public Customer(Long id, String name, String password, String email) {
