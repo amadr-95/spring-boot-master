@@ -1,4 +1,4 @@
-package com.project.jsonplaceholder;
+package com.project.openfeign;
 
 public class Post {
     private final Integer userId;

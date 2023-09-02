@@ -1,4 +1,4 @@
-package com.project.jsonplaceholder;
+package com.project.openfeign;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;

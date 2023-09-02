@@ -1,4 +1,4 @@
-package com.project.jsonplaceholder;
+package com.project.openfeign;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
