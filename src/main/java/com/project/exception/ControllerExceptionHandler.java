@@ -13,9 +13,8 @@ public class ControllerExceptionHandler {
 
     private ErrorMessage errorMessage;
 
-
     @ExceptionHandler(value = BadRequestException.class)
-    public ResponseEntity<ErrorMessage> ApiRequestExceptionHandler(BadRequestException e) {
+    public ResponseEntity<ErrorMessage> badRequestExceptionHandler(BadRequestException e) {
         HttpStatus status = HttpStatus.BAD_REQUEST;
         errorMessage = new ErrorMessageV1(
                 status.value(),
@@ -27,7 +26,7 @@ public class ControllerExceptionHandler {
     }
 
     @ExceptionHandler(value = ResourceNotFoundException.class)
-    public ResponseEntity<ErrorMessage> handleResourceNotFoundException(ResourceNotFoundException e, WebRequest request) {
+    public ResponseEntity<ErrorMessage> resourceNotFoundExceptionHandler(ResourceNotFoundException e, WebRequest request) {
         HttpStatus status = HttpStatus.NOT_FOUND;
         errorMessage = new ErrorMessageV2(
                 status.value(),
