@@ -3,3 +3,18 @@ server:
     include-message: always
     include-binding-errors: always
     include-stacktrace: on_param #show the trace if it is passed as a parameter in the URL
+
+#H2 Database configuration
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+      path: /h2
