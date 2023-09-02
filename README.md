@@ -1,6 +1,3 @@
-# Spring Data JPA and H2 In-Memory Database
+# Spring Cloud Open Feign
 
-In this section we are going to interact with a real in-memory database such as H2
-using Spring Data JPA library.
-
-
+In this section we are going to use Spring Cloud Open Feign to create a declarative REST Client to consume our API
