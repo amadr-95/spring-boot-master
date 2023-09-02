@@ -14,7 +14,7 @@
 	<name>spring-boot-master</name>
 	<properties>
 		<java.version>17</java.version>
-		<spring-cloud.version>2022.0.1</spring-cloud.version>
+		<spring-cloud.version>2022.0.3</spring-cloud.version>
 		<!--need to downgrade the jakarta.servlet-api to 5.0.0 to work with jetty-->
 		<!--<jakarta-servlet.version>5.0.0</jakarta-servlet.version>-->
 	</properties>
