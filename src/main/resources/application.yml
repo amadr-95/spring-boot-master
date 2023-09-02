@@ -2,4 +2,4 @@ server:
   error:
     include-message: always
     include-binding-errors: always
-    include-stacktrace: on_param #show the trace if is passed as a parameter
+    include-stacktrace: on_param #show the trace if it is passed as a parameter in the URL

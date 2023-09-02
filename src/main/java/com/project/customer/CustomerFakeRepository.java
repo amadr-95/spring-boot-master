@@ -1,10 +1,7 @@
 package com.project.customer;
 
-import org.springframework.stereotype.Repository;
-
 import java.util.List;
 
-@Repository("fake")
 public class CustomerFakeRepository implements CustomerDAO {
     @Override
     public List<Customer> getCustomers() {

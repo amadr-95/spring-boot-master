@@ -8,9 +8,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class CustomerConfig {
 
-    //this value is given by program arguments (false by default)
-    /*@Value("${app.useFakeCustomerRepo:false}")
-    private boolean useFakeCustomerRepo;*/
+    //this value is given by program arguments (false by default): --app.useFakeCustomerRepo=true
+    @Value("${app.useFakeCustomerRepo:false}")
+    private boolean useFakeCustomerRepo;
 
     @Bean
     CommandLineRunner commandLineRunner() {
@@ -19,9 +19,9 @@ public class CustomerConfig {
         };
     }
 
-   /* @Bean
+    @Bean
     CustomerDAO customerDAO() {
         System.out.println("useFakeCustomerRepo = " + useFakeCustomerRepo);
         return useFakeCustomerRepo ? new CustomerFakeRepository() : new CustomerRepository();
-    }*/
+    }
 }
