@@ -1,19 +1,6 @@
 package com.project.customer;
 
-import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.Collections;
-import java.util.List;
-
-@Repository
-@Primary
-public class CustomerRepository implements CustomerDAO {
-    @Override
-    public List<Customer> getCustomers() {
-        //TODO connect to real db
-        return Collections.singletonList(
-                new Customer(0L, "TODO. Implement real db", "todo", "email@gmail.com")
-        );
-    }
+public interface  CustomerRepository extends JpaRepository<Customer, Long> {
 }
