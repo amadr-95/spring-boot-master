@@ -1,0 +1,48 @@
+server:
+  error:
+    include-message: always
+
+#H2 Database configuration
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb-dev
+    driverClassName: org.h2.Driver
+    username: dev
+    password: dev
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-dev
+
+# Exposing endpoints
+
+#Since Spring 2.5.0 some endpoints are hidden,
+#according with Spring Boot 2.5 Release Notes
+#(https://docs.spring.io/spring-boot/docs/2.5.0/reference/htmlsingle/#actuator.endpoints.exposing)
+#So now you need to expose them manually.
+#Also check https://reflectoring.io/spring-boot-info-endpoint/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health, info, prometheus" #"*" to show all
+  info:
+    java:
+      enabled: true
+    env: #enable display environment variables
+      enabled: true
+  endpoint:
+    health:
+      show-details: always
+
+
+#Env variables
+#App info
+info:
+  app:
+    name: Spring Boot Master Class course
+    description: Master Spring Boot
+    version: 1.0.0
