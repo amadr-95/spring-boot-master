@@ -1,4 +1,4 @@
-# Proterties and Profiles
+# Proterties
 
 In config class we can access to application properties by using @Value annotation like that:
 ```
@@ -33,5 +33,15 @@ public class CustomerConfig {
 }
 ```
 
-But the correct way may be using @ConfigurationProperties annotation:
+But the correct way may be using `@ConfigurationProperties` annotation:
 check InfoApp and InfoDB classes
+
+# Profiles
+We can add different profiles to work with and each one may have different settings
+in order to work properly depending on whether we are developping on local or not
+
+![profiles](src/main/resources/images/profiles.png)
+
+By active one of the profiles:
+- Pass de value as a program argument: `--spring.profiles.active=dev`
+- 
