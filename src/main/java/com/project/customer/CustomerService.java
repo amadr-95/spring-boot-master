@@ -3,7 +3,6 @@ package com.project.customer;
 import com.project.exception.ResourceNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,19 +12,19 @@ public class CustomerService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(CustomerService.class);
 
-    private final CustomerDAO customerDAO;
+    private final CustomerRepository customerRepository;
 
-    public CustomerService(CustomerDAO customerDAO) {
-        this.customerDAO = customerDAO;
+    public CustomerService(CustomerRepository customerRepository) {
+        this.customerRepository = customerRepository;
     }
 
     public List<Customer> getCustomers() {
         LOGGER.info("calling getCustomers");
-        return customerDAO.getCustomers();
+        return customerRepository.findAll();
     }
 
     public Customer getCustomer(Long customerId) {
-        return customerDAO.findById(customerId)
+        return customerRepository.findById(customerId)
                 .orElseThrow(
                         () -> {
                             ResourceNotFoundException resourceNotFoundException = new ResourceNotFoundException(
