@@ -18,3 +18,32 @@ spring:
     console:
       enabled: true
       path: /h2
+
+#App info
+
+#Since Spring 2.5.0 some endpoints are hidden,
+#according with Spring Boot 2.5 Release Notes
+#(https://docs.spring.io/spring-boot/docs/2.5.0/reference/htmlsingle/#actuator.endpoints.exposing)
+#So now you need to expose them manually.
+#Also check https://reflectoring.io/spring-boot-info-endpoint/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health, info" #"*" to show all
+  info:
+    java:
+      enabled: true
+    env: #enable display environment variables
+      enabled: true
+  endpoint:
+    health:
+      show-details: always
+
+
+#Env variables
+info:
+  app:
+    name: Spring Boot Master Class course
+    description: Master Spring Boot
+    version: 1.0.0
