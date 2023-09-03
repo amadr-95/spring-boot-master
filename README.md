@@ -42,6 +42,8 @@ in order to work properly depending on whether we are developping on local or no
 
 ![profiles](src/main/resources/images/profiles.png)
 
-By active one of the profiles:
-- Pass de value as a program argument: `--spring.profiles.active=dev`
-- 
+By activating one of these profiles only have to pass the value as a program argument: `--spring.profiles.active=dev`
+
+Once the application is packaged you can run multiple instances of it with different settings from the command line just like that:
+- `java -jar [applicationName].jar --spring.profiles.active=dev`
+- `java -jar [applicationName].jar --spring.profiles.active=default --server.port=3000`
