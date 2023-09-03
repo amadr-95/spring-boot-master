@@ -30,7 +30,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: "health, info" #"*" to show all
+        include: "health, info, prometheus" #"*" to show all
   info:
     java:
       enabled: true
