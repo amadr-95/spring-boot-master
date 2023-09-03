@@ -1,26 +1,21 @@
 package com.project.customer;
 
 import com.project.exception.ResourceNotFoundException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Qualifier;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@AllArgsConstructor
+@Slf4j
 public class CustomerService {
-
-    private static final Logger LOGGER = LoggerFactory.getLogger(CustomerService.class);
 
     private final CustomerDAO customerDAO;
 
-    public CustomerService(CustomerDAO customerDAO) {
-        this.customerDAO = customerDAO;
-    }
-
     public List<Customer> getCustomers() {
-        LOGGER.info("calling getCustomers");
+        log.info("calling getCustomers");
         return customerDAO.getCustomers();
     }
 
@@ -30,7 +25,7 @@ public class CustomerService {
                         () -> {
                             ResourceNotFoundException resourceNotFoundException = new ResourceNotFoundException(
                                     "customer with id %s does not exist".formatted(customerId));
-                            LOGGER.error("error in getting customer {}", customerId, resourceNotFoundException);
+                            log.error("error in getting customer {}", customerId, resourceNotFoundException);
                             return resourceNotFoundException;
                         }
                 );
